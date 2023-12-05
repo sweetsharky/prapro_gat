@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from aufgabenzettel.forms import AufgabenzettelForm
 
 # Create your views here.
-
-def mitarbeiter(request): #alles unter mitarbeiter() neu machen, ist nicht richtig
+def create_aufgabenzettel(request):
     context= {}
     method = request.method
 
@@ -22,14 +21,11 @@ def mitarbeiter(request): #alles unter mitarbeiter() neu machen, ist nicht richt
         form = AufgabenzettelForm()
         return render(      #render = darstellen lassen
             request,
-            'index.html',
+            'aufgabenbereich.html',
             {
                 'form': form,
                 'tag': 'dienstag',
              }
         )
-    return render(request=request, template_name='index.html', context=context) #lieber mit return render(), anstatt HttpResponse 
+    return render(request=request, template_name='aufgabenbereich.html', context=context) #lieber mit return render(), anstatt HttpResponse 
    #return render(request,'index.html', context) ist das gleiche wie eine Zeile drüber, nur kürzer
-
-
-
