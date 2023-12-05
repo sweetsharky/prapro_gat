@@ -4,10 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
 </head>
 <body>
-    <h1>Hello Mitarbeiter</h1>
-<p>Hier ist dein Profil</p>
+    
+    <div class="container">
+        <ul class="nav bg-info">
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/">Aufgabenbereich</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/mitarbeiter">Mitarbeiter</a>
+          </li>
+        </ul>
 
+<br>
+<br>
+<h1>Hier ist dein Profil</h1>
+
+<label>
+    Vorname:
+</label>
+<input name="first name" id = "id_first_name" type ="text">
+<br>
+
+<label>
+    Nachname
+</label>
+<input name ="last name" type ="text">
+<br>
+
+<label>
+    Profilbild
+</label>
+<input name ="age" type ="color">
+
+<button type="submit">Absenden</button>
+<br>
+<br>
+<br>
+<br>
+    <h1>Diese Aufgaben sind zu erledigen</h1>
+<form method="post" action="{% url '_mitarbeiter' %}">
+    {% csrf_token %}
+
+    {{ tag }}
+    {{ form.as_p }} <!-- form wird aus gegriffen aus views.py und as_... macht eine schone Vorlage mit dem Inhalt, z.b. as_div, as_table...-->
+    <button type="submit">Aufgabenzettel erstellen</button>
+    <input type="submit" value="OK">
+
+    
+    </form>
 </body>
 </html>
