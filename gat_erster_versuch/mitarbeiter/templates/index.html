@@ -32,13 +32,13 @@
 <br>
 
 <label>
-    Nachname
+    Nachname: 
 </label>
 <input name ="last name" type ="text">
 <br>
 
 <label>
-    Profilbild
+    Profilbild: 
 </label>
 <input name ="age" type ="color">
 
@@ -48,13 +48,13 @@
 <br>
 <br>
     <h1>Diese Aufgaben sind zu erledigen</h1>
-<form method="post" action="{% url '_mitarbeiter' %}">
+<form method="post" action="{% url 'mitarbeiter_' %}">
     {% csrf_token %}
 
     {{ tag }}
     {{ form.as_p }} <!-- form wird aus gegriffen aus views.py und as_... macht eine schone Vorlage mit dem Inhalt, z.b. as_div, as_table...-->
     <button type="submit">Aufgabenzettel erstellen</button>
-    <input type="submit" value="OK">
+
 
     
     </form>
