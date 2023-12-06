@@ -10,9 +10,3 @@ class Mitarbeiter(models.Model):
         return self.vorname + " " + self.nachname
     
 
-class Aufgabenzettel(models.Model):
-    überschrift = models.CharField(max_length=30)
-    beschreibung = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.überschrift + ": " + self.beschreibung

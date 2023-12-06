@@ -1,5 +1,5 @@
 from django import forms
-from mitarbeiter.models import Aufgabenzettel
+from aufgabenzettel.models import Aufgabenzettel
 
 class AufgabenzettelForm(forms.ModelForm):
     #neu
