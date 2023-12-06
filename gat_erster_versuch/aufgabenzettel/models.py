@@ -4,7 +4,7 @@ from django.db import models
 class Aufgabenzettel(models.Model):
     überschrift = models.CharField(max_length=30)
     beschreibung = models.CharField(max_length=100)
-    übernommen = models.
+    
 
 
     def __str__(self):
