@@ -8,9 +8,11 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
+
+
 </head>
 <body>
-    
+
     <div class="container">
         <ul class="nav bg-info">
           <li class="nav-item">
@@ -22,43 +24,20 @@
           <li class="nav-item">
             <a class="nav-link link-light" href="/alle_mitarbeiter">Mitarbeiter</a>
           </li>
+            </ul>
+          </li>
         </ul>
 
-<br>
-<br>
-<h1>Hier erstellst du dein Profil</h1>
+<h1>Mitarbeiter</h1>
+
+<ol>
+    {% for x in alle_mitarbeiter %}
+      <li>{{ x.vorname }} {{ x.nachname }}</li>
+    {% endfor %}
+  </ol>
+  
 
 
-<form method="post" action="{% url 'erstelle_mitarbeiter_' %}">
-    {% csrf_token %}
-
-    {{ tag }}
-    {{ form.as_p }} <!-- form wird aus gegriffen aus views.py und as_... macht eine schone Vorlage mit dem Inhalt, z.b. as_div, as_table...-->
-    <button type="submit">Dein Profil erstellen</button>
-
-
-    
-    </form>
-
-<!-- <label>
-    Vorname:
-</label>
-<input name="first name" id = "id_first_name" type ="text">
-<br>
-
-<label>
-    Nachname: 
-</label>
-<input name ="last name" type ="text">
-<br>
-
-<label>
-    Profilbild: 
-</label>
-<input name ="age" type ="color">
-
-<button type="submit">Absenden</button>
-<br> -->
 
 </body>
 </html>

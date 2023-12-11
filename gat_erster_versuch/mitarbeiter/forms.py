@@ -5,4 +5,4 @@ class MitarbeiterForm(forms.ModelForm):
     #neu
     class Meta:
         model = Mitarbeiter
-        fields = ['vorname', 'nachname', 'profilbild']
+        fields = ['vorname', 'nachname']
