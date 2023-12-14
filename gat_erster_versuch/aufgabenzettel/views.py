@@ -19,7 +19,7 @@ def create_aufgabenzettel(request):
 
     else: #wenn jemand die Seite aufruft(get) und nicht abschickt(post)
         form = AufgabenzettelForm()
-        return render(request,'aufgabenbereich.html', {'form': form,'tag': 'dienstag',} )
+        return render(request,'aufgabenbereich.html', {'form_Aufgabenzettel': form,'tag': 'dienstag',} )
     
     return render(request=request, template_name='aufgabenbereich.html', context=context) #lieber mit return render(), anstatt HttpResponse 
    #return render(request,'index.html', context) ist das gleiche wie eine Zeile drüber, nur kürzer

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilseite</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mitarbeiter
+            </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/erstelle_mitarbeiter">Erstelle Mitarbeiter</a></li>
+            <li><a class="dropdown-item" href="/alle_mitarbeiter">Alle Mitarbeiter</a></li>
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ziele</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Aufgabenbereich
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/aufgabenzettel">Aufgabenzettel erstellen + Selbsteinschätzung</a></li>
+              </li>
+            </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hilfeforum</a>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Workload</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <h1>{{ mitarbeiter.vorname }} {{ mitarbeiter.vorname }}</h1>
+  
+<p>Aufgabenbezogene Fähigkeiten: {{ mitarbeiter.vorname }}</p>
+<p>Arbeitsbelastung: {{ mitarbeiter.nachname }}</p>
+
+<p>Back to <a href="/alle_mitarbeiter">Alle Mitarbeiter</a></p>
+
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
 from mitarbeiter.forms import MitarbeiterForm
 from .models import Mitarbeiter
 
@@ -26,7 +25,7 @@ def erstelle_mitarbeiter(request):
             request,
             'mitarbeiterbereich.html',
             {
-                'form': form,
+                'form_Mitarbeiter': form,
                 'tag': 'dienstag',
              }
         )
@@ -35,13 +34,16 @@ def erstelle_mitarbeiter(request):
 
 
 def mitarbeiter(request):
-    # context = {}
-    # form = MitarbeiterForm()
-    # return render(request,'alle_mitarbeiter.html',{'form': form,'tag': 'dienstag',}
-    #         )
     alle_mitarbeiter = Mitarbeiter.objects.all().values()           #Objekt mit allen Werten des Member-models wird erstellt
-    template = loader.get_template('alle_mitarbeiter.html')
     context = {
         'alle_mitarbeiter' : alle_mitarbeiter,                        
     }
-    return HttpResponse(template.render(context, request))
+    return render(request,'alle_mitarbeiter.html', context)
+
+
+def details(request, id):
+    mitarbeiter = Mitarbeiter.objects.get(id=id)
+    context = {
+        'mitarbeiter': mitarbeiter, 
+    }   
+    return render(request, 'details.html', context)

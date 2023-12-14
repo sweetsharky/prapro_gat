@@ -13,29 +13,75 @@
 </head>
 <body>
 
+  <!-- Frühere Nav Bar nur als Referenz für Farbdastellung, kann gelöscht werden später :)
     <div class="container">
-        <ul class="nav bg-info">
-          <li class="nav-item">
-            <a class="nav-link link-light" href="/aufgabenzettel">Aufgabenbereich</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="/erstelle_mitarbeiter">Erstelle Mitarbeiter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="/alle_mitarbeiter">Mitarbeiter</a>
-          </li>
-            </ul>
-          </li>
-        </ul>
+    <ul class="nav bg-info">
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/aufgabenzettel">Aufgabenbereich</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/erstelle_mitarbeiter">Erstelle Mitarbeiter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/alle_mitarbeiter">Mitarbeiter</a>
+      </li>
+    </ul>
+</div> 
+-->
 
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mitarbeiter
+          </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/erstelle_mitarbeiter">Erstelle Mitarbeiter</a></li>
+          <li><a class="dropdown-item" href="/alle_mitarbeiter">Alle Mitarbeiter</a></li>
+        </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ziele</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Aufgabenbereich
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/aufgabenzettel">Aufgabenzettel erstellen + Selbsteinschätzung</a></li>
+            </li>
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hilfeforum</a>
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Workload</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <h1>Mitarbeiter</h1>
 
 <ol>
+  <li>maaaaan gleiches problem iwi</li>
     {% for x in alle_mitarbeiter %}
-      <li>{{ x.vorname }} {{ x.nachname }}</li>
+      <li><a href="details/{{ x.id }}">{{ x.vorname }} {{ x.nachname }}</a></li>
     {% endfor %}
   </ol>
   
+
 
 
 
